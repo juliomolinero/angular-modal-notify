@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />    
+    <!-- JavaScript Files needed by AngularJS -->  
+    <script src="js/jquery.1.11.1.min.js"></script>
+    <script src="js/angular.min.1.5.8.js"></script>    
+    <script src="js/bootstrap.3.0.3.min.js"></script>
+    <script src="js/angular-animate.1.5.8.js"></script>
+    <script src="js/angular-sanitize.1.5.8.js"></script>    
+    <script src="js/ui-bootstrap-tpls-2.2.0.js"></script>
+    <script src="js/ng-notify.min.js"></script>
+    <!-- Our App Files -->
+    <script src="ngAppModule.js"></script>
+    <script src="ngAppService.js"></script>
+    <script src="ngAppController.js"></script>
+    <script src="ngAppModalController.js"></script>
+    <!-- CSS Files -->    
+    <link href="css/bootstrap.3.3.7.css" rel="stylesheet" />
+    <link href="css/ng-notify.min.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />    
+</head>
+<body>
+    <div id="ng-notifier"></div>
+    <div class='row' ng-app="ngAppModule" ng-controller="ngAppController">
+        <div class="col-md-1">&nbsp;</div>
+        <!-- Modal content-->
+        <div class="col-md-10 modal-content">
+            <!-- Moday body -->
+            <div class="modal-body">
+                <!-- Tab headers -->
+                <div class="row">
+                    <div class="col-md-10">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li ng-click="listOptions('template-1')" class="active" id="tab_menu_template_1"><a style="background-color:#449d44 !important;" role="tab" href="#tab_template_1" data-toggle="tab">Template 1 - Set to initial state</a></li>                            
+                        </ul>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <!-- End Tab headers -->
+                <!-- Tab body, the options per se -->
+                <div class="row margin-top-40">
+                    <div class="col-md-12">
+                        <!-- Tab Content -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_template_1">                                
+                                <!-- Load in the correct modal contents -->
+                                <ng-include ng-init="listOptions('template-1')" src="'templates/options.html'"></ng-include>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
