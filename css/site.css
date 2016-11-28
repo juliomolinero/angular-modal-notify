@@ -1,0 +1,50 @@
+﻿body{
+    padding-top: 40px;
+    width: 95%;
+}
+.margin-top-20 {
+    margin-top: 20px;
+}
+.tab-footer {
+    padding: 15px;
+    text-align: right;
+    margin-top: 10px;
+    border-top: 1px solid #e5e5e5;
+}
+.nav-pills > li > a {
+    color: #bfc6c6;
+    background-color: #5A6465;
+    margin-left: 5px;
+    line-height: 15px;
+}
+.nav-pills > li > a:hover, .nav-pills > li > a:focus {
+    color: #2c3e50;
+    background-color: #F2F3F4;
+    margin-left: 5px;
+    line-height: 15px;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+	/*
+    color: #2c3e50;
+    background-color: #F2F3F4;
+	*/
+    margin-left: 5px;
+    line-height: 15px;
+	margin-top: -5px;
+	height: 50px;
+	padding: 15px;
+}
+/* DA modal headers */
+/* CSS used here will be applied after bootstrap.css */
+.modal-header-success {
+    color:#fff;
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #449d44; /*#5cb85c;*/	
+    -webkit-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-radius: 5px;
+}
