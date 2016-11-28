@@ -1,1 +1,52 @@
-
+﻿<div class="row margin-top-20">
+    <div>
+        <table class="table table-stripped table-bordered table-hover">
+            <tr>
+                <th class="col-md-5"><span>Question Text</span></th>
+                <th class="col-md-3"><span>Response Type</span></th>
+                <th class="col-md-1 text-center"><span>Display Position</span></th>
+                <th class="col-md-1 text-center"><span>Optional</span></th>                
+                <th class="col-md-1 text-center"><span>Remove</span></th>
+            </tr>
+            <tr ng-repeat="formOption in formOptions">
+                <td><input type="text" class="form-control" value="{{formOption.Question_text}}" ng-model="formOption.Question_text" /></td>
+                <td>
+                    <select class="form-control" ng-dropdown ng-model="formOption.options_type">
+                        <option value="Yes/No">Yes/No</option>
+                        <option value="Satisfied/Neutral/Unsatisfied">Satisfied/Neutral/Unsatisfied</option>
+                        <option value="Free Form Text">Free Form Text</option>
+                    </select>
+                </td>
+                <td class="text-center">
+                    <select class="form-control" ng-dropdown ng-model="formOption.display_position">
+                        <option ng-selected="formOption.display_position=='1'" value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+                <td class="text-center">
+                    <input type="checkbox" ng-model="formOption.is_optional" ng-true-value="'Yes'" ng-false-value="'No'" />
+                </td>                
+                <td class="text-center" ng-controller="ngAppModalController as $ctrl">                    
+                    <button class="btn btn-danger" ng-click="$ctrl.deleteOption( null, null, formOption )" type="button">Remove</button>
+                </td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div class="col-md-7"><div ng-hide="totalOptions>=5"><button class="btn btn-success" ng-click="addRow(layout)" type="button">+ Add Questions</button>&nbsp;&nbsp;(max {{5-totalOptions}} additional questions)</div></div>
+                        <div class="col-md-5 text-right">* Please mouseover column headings for details</div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<div class="row tab-footer">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 pull-right" ng-controller="ngAppModalController as $ctrl">
+        <button class="btn btn-info" type="button" data-dismiss="modal" ng-click="$ctrl.showPreview(null, null, template, formOptions);">Preview</button>        
+    </div>
+</div>
